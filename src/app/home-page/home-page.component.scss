@@ -1,0 +1,323 @@
+body {
+    margin: topnav0;
+    background-color: white;
+}
+
+.topnav {
+    overflow: hidden;
+    height: 60px;
+    background-color: #333;
+}
+
+.topnav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 31px;
+}
+
+.topnav a:hover {
+    background-color: grey;
+    color: black;
+}
+
+.active {
+    background-color: #13589D;
+    color: black;
+}
+
+.LNW img {
+    padding-left: 9px;
+    padding-top: 9px;
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    margin: 3px;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+    cursor: pointer;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 18px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.openbtn {
+    font-size: 34px;
+    position: static;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+#main {
+    position: absolute;
+    transition: margin-left .5s;
+}
+
+// Accordian search
+/* 
+
+
+.accoClass .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    font-size: x-large;
+}
+
+.accoClass .active,
+.accoClass .accordion:hover {
+    font-size: x-large;
+    background-color: #ccc;
+}
+
+.accoClass .panel {
+    padding: 0 18px;
+    background-color: #ccc;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-content: flex-start;
+}
+
+.accoClass i {
+    position: absolute;
+    right: 17px;
+    cursor: pointer;
+}
+
+// btn
+.searchBtn {
+    border: none;
+    height: 50px;
+    width: 50%;
+    cursor: pointer;
+    text-align: center;
+    margin: 8px;
+}
+
+.panel button {
+    width: 20%;
+    height: 40px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: whitesmoke;
+    background: #13589D;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+
+.panel .example-form {
+    width: 88%;
+}
+
+.mat-mdc-form-field + .mat-mdc-form-field {
+    margin-left: 8px;
+  } */
+
+
+.searchBtn {
+    height: 35px;
+    width: 100px;
+    cursor: pointer;
+    margin: 8px;
+    text-align: center;
+    width: 100px;
+    margin: 23px;
+    border: none;
+    border-radius: 3px;
+    background-color: #d0d0d0;
+}
+.mat-form-field {
+    margin: 10px;
+}
+#accordianMain {
+    position: relative;
+    transition: margin-left .5s;
+}
+
+//AG-grid
+
+#gridMain {
+    position: absolute;
+    transition: margin-left .5s;
+}
+
+.ag-theme-alpine-dark {
+    // width: 1280px; 
+    height: 500px;
+}
+
+// @media only screen and (max-width: 700px) {
+//     .ag-theme-alpine-dark {
+//         width: 683px;
+//     }
+//   }
+
+// info panel
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #13589D;
+    color: white;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #13589D;
+    color: white;
+}
+
+
+// tooltip text
+
+.btn .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+
+    /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.btn:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

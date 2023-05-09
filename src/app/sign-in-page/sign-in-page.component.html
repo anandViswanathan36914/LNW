@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <div class="left">
+        <div class="LNW"><img src=" ../../assets/lnw_white_logo.svg" /></div>
+        <div class="rights">© 2022 Light & Wonder, Inc. and its Subsidiaries. All Rights Reserved.</div>
+    </div>
+    <div class="main">
+        <div class="signup">
+            <form>
+                <label>Sign up</label>
+                <input type="text" name="txt" placeholder="User name" [(ngModel)]="signInObj.username" required="">
+                <input type="email" name="email" placeholder="Email" [(ngModel)]="signInObj.mailId" required="">
+                <input type="password" name="pswd" placeholder="Password" [(ngModel)]="signInObj.password" required="">
+                <button on-click="signUp()">Sign up</button>
+            </form>
+            <p>Already have an account? <a routerLink="/">Log In</a></p>
+        </div>
+    </div>
+</body>
+
+</html>

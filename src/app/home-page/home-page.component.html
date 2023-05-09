@@ -1,0 +1,134 @@
+<!-- Header Nav bar -->
+<div id="main">
+    <button class="openbtn" (click)="toggleSidePane()"><i class="fa-solid fa-bars"></i></button>
+    <a class="LNW"><img src=" ../../assets/lnw-fullLogo.svg" /></a>
+</div>
+<div id="myDIV" class="topnav">
+    <a mat-raised-button matTooltip="Log out" routerLink="/" class="btn"><i class="fa fa-power-off"></i><span
+            class="tooltiptext">Log Out</span></a>
+    <a mat-raised-button matTooltip="Info" (click)="myBtn()" id="myBtn" class="btn active"><i
+            class="fa fa-circle-info"></i></a>
+</div>
+<div id="mySidebar" class="sidebar">
+    <a (click)="myBtn()">About</a>
+    <a>Contact</a>
+</div>
+
+<!-- Mat Accordian -->
+<div id="accordianMain">
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <h3>Search</h3>
+                <!-- <mat-panel-description>
+                Search
+              </mat-panel-description> -->
+            </mat-expansion-panel-header>
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                    <input type="number" placeholder="Request ID" matInput [formControl]="myControl">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input matInput type="tel" placeholder="Mobile Number" matInput [formControl]="myControl">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input type="date" placeholder="From Date" matInput [formControl]="myControl">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input type="date" placeholder="To Date" matInput [formControl]="myControl">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input type="text" id="firstname" placeholder="First Name" [(ngModel)]="searchName" matInput
+                        [formControl]="myControl" [matAutocomplete]="auto">
+                    <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let option of firstNameOpt | async" [value]="option">
+                            {{option}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input type="text" placeholder="Last Name" matInput [formControl]="myControl"
+                        [matAutocomplete]="id">
+                    <mat-autocomplete #id="matAutocomplete">
+                        <mat-option *ngFor="let option of secondNameOpt | async" [value]="option">
+                            {{option}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+                <button class="searchBtn" (click)="filterGrid()">Search</button>
+            </form>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+<!-- Accordian Search -->
+<!-- <div class="accoClass" id="accordianMain">
+    <button (click)="arrowUp()" class="accordion">Search<i
+            [ngClass]="isUp?'fa fa-angle-up':'fa fa-angle-down'"></i></button>
+    <div class="panel" id="panel">
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <input type="number" placeholder="Request ID" aria-label="Number" matInput [formControl]="myControl">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input type="number" placeholder="Mobile Number" aria-label="Number" matInput [formControl]="myControl">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input type="date" placeholder="From Date" aria-label="Number" matInput [formControl]="myControl">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input type="date" placeholder="To Date" aria-label="Number" matInput [formControl]="myControl">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input type="text" placeholder="First Name" aria-label="Number" matInput [formControl]="myControl"
+                    [matAutocomplete]="auto">
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of firstNameOpt | async" [value]="option">
+                        {{option}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input type="text" placeholder="Last Name" aria-label="Number" matInput [formControl]="myControl"
+                    [matAutocomplete]="id">
+                <mat-autocomplete #id="matAutocomplete">
+                    <mat-option *ngFor="let option of secondNameOpt | async" [value]="option">
+                        {{option}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+
+            <button class="searchBtn">Search</button>
+        </form>
+
+    </div>
+</div> -->
+
+
+<!-- Ag-grid -->
+<div id="gridMain" class="grid">
+    <div class="aggrid">
+        <ag-grid-angular id="ag-theme-alpine-dark" class="ag-theme-alpine-dark" [rowData]="rowData"
+        [animateRows]="true" (gridReady)="onGridReady($event)" [columnDefs]="columnDefs" [defaultColDef]="defaultColDef">
+        </ag-grid-angular>
+    </div>
+</div>
+
+
+<!-- Info Panel -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span (click)="close()" class="close">&times;</span>
+            <h2>About</h2>
+        </div>
+        <div class="modal-body">
+            <h3>Light & Wonder</h3>
+            <h6>Version 1.0.0</h6>
+            <h6>&#169; Light & Wonder, Inc. and its Subsidiaries. All rights Reserved.</h6>
+            <p></p>
+        </div>
+        <div class="modal-footer">
+            <!-- <button (click)="close()">close</button> -->
+        </div>
+    </div>
+</div>
